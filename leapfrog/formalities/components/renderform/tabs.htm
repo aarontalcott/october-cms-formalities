@@ -1,0 +1,18 @@
+{% partial '@tabs-container-open' %}
+{% partial '@tabs-tabs-container-open' %}
+{% for tabTitle, tab in fields.tabs %}
+    {% partial '@tabs-tab-container-open' %}
+    {% partial '@tabs-tab-content' tabTitle=tabTitle %}
+    {% partial '@tabs-tab-container-close' %}
+{% endfor %}
+{% partial '@tabs-tabs-container-close' %}
+{% partial '@tabs-contents-container-open' %}
+{% for tab in fields.tabs %}
+    {% partial '@tabs-content-container-open' %}
+    {% for key, field in tab %}
+        {% partial '@fieldset' key=key field=field %}
+    {% endfor %}
+    {% partial '@tabs-content-container-close' %}
+{% endfor %}
+{% partial '@tabs-contents-container-close' %}
+{% partial '@tabs-container-close' %}

@@ -1,0 +1,7 @@
+{% if showLabels %}{% partial '@label' %}{% endif %}
+<div class="formalities-form__select-wrapper"><select name="{{ model }}[{{ field.name }}]"{% if field.required and validate %} required{% endif %} class="formalities-form__input">
+    {% if (field.emptyOption) %}<option value=""{% if field.default == '' %} selected{% endif %}{% if field.required %} disabled{% endif %}>{{ field.emptyOption }}</option>{% endif %}
+    {% for key, value in field.options %}
+    <option value="{{ key }}"{% if (field.default != '' and key == field.default) %} selected{% endif %}>{{ value }}</option>
+    {% endfor %}
+</select></div>

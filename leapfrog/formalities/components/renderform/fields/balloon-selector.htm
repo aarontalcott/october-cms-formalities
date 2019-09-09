@@ -1,0 +1,6 @@
+{% if showLabels %}{% partial '@label' %}{% endif %}
+<div class="formalities-form__input-group">
+{% for key, value in field.options %}
+<label><input type="radio" name="{{ model }}[{{ field.name }}]" value="{{ key }}" class="formalities-form__radio{% if loop.first %} formalities-form__radio--first"{% endif %}"> {{ value }}</label>
+{% endfor %}
+</div>

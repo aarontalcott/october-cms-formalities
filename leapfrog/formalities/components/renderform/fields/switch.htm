@@ -1,0 +1,5 @@
+<label>{{ field.label }}{% if field.required and validate %}*{% endif %}</label> 
+<div class="formalities-form__input-group">
+<label><input type="radio" name="{{ model }}[{{ field.name }}]" value="0"{% if not field.default %} checked{% endif %} class="formalities-form__radio formalities-form__radio--first"> Off</label>
+<label><input type="radio" name="{{ model }}[{{ field.name }}]" value="1"{% if field.default %} checked{% endif %} class="formalities-form__radio"> On</label>
+</div>

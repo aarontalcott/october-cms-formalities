@@ -1,0 +1,13 @@
+{% partial '@success-message' %}
+{% partial '@form-open' %}
+{% if fields.fields %} 
+    {% for key, field in fields.fields %}
+        {% partial '@fieldset' field=field %}
+    {% endfor %}
+{% endif %}
+{% if fields.tabs %}
+    {% partial '@tabs' %}
+{% endif %}
+{% partial '@fields/submit' %}
+{% if includeCss %}{% partial '@loading-spinner' %}{% endif %}
+{% partial '@form-close' %}

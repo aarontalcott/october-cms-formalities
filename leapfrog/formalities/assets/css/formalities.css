@@ -1,0 +1,190 @@
+@import url('vanilla.datepicker.css');
+
+.formalities-form * {
+    box-sizing: border-box;
+}
+
+.formalities-form {
+    position: relative;
+}
+
+.formalities-form__fieldset {
+    margin-bottom: 15px;
+    clear: both;
+    position: relative;
+    z-index: 1;
+}
+
+.formalities-form__fieldset--submit {
+    text-align: center;
+    margin-top: 30px;
+    z-index: 0;
+}
+
+.formalities-form__fieldset--datepicker {
+    z-index: 2;
+}
+
+@media (min-width: 400px) {
+    .formalities-form__fieldset--left {
+        width: 50%;
+        float: left;
+        padding-right: 10px;
+        clear: none;
+    }
+
+    .formalities-form__fieldset--right {
+        width: 50%;
+        float: right;
+        padding-left: 10px;
+        clear: none;
+    }
+}
+
+.formalities-form--loading * {
+    transition: all 300ms ease;
+}
+
+.formalities-form--loading .formalities-form__fieldset {
+    opacity: .3;
+    pointer-events: none;
+}
+
+.formalities-form--loading .formalities-form__spinner {
+    opacity: 1;
+}
+
+.formalities-form__select-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.formalities-form__select-wrapper::after {
+    content: "▾";
+    position: absolute;
+    right: 15px;
+    top: 5px;
+}
+
+.formalities-form__error {
+    color: red;
+    max-height: 0;
+    transition: all 200ms ease;
+    opacity: 0;
+}
+
+.formalities-form__error--active {
+    max-height: 30px;
+    opacity: 1;
+}
+
+.formalities-form__label {
+    display: inline-block;
+    background: white;
+    position: relative;
+    line-height: 1;
+    z-index: 1;
+}
+
+.formalities-form__input {
+    display: block;
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 4px 8px;
+    width: 100%;
+    background: white;
+    z-index: 0;
+}
+
+input[type=checkbox].formalities-form__checkbox, input[type=radio].formalities-form__radio {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+input[type=checkbox].formalities-form__checkbox--first, input[type=radio].formalities-form__radio--first {
+    margin-left: 0;
+}
+
+textarea.formalities-form__input {
+    height: 100px;
+}
+
+.formalities-form__input:focus {
+    outline: 0 !important;
+    border-color: #333 !important;
+}
+
+select.formalities-form__input {
+    -webkit-appearance: none;
+}
+
+input[type="submit"].formalities-form__input {
+    width: auto;
+    display: inline-block;
+    padding: 8px 25px;
+}
+
+.formalities-form__input--dropdown option[value=""], .formalities-form__input--dropdown:invalid {
+    color: #ccc !important;
+}
+
+.formalities-form__fieldset ::-webkit-input-placeholder {
+    color: #ccc;
+}
+
+.formalities-form__fieldset input:focus::-webkit-input-placeholder {
+    opacity: 0;
+}
+
+.formalities-form__spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    opacity: 0;
+    width: 64px;
+    height: 64px;
+    pointer-events: none;
+}
+
+.formalities-form__spinner div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 51px;
+    height: 51px;
+    margin: 6px;
+    border: 6px solid #333;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #333 transparent transparent transparent;
+}
+
+.formalities-form__spinner  div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.formalities-form__spinner  div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.formalities-form__spinner  div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.formalities-success-message {
+    display: none;
+}
+
+.formalities-success-message--active {
+    display: block;
+}

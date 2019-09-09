@@ -1,0 +1,9 @@
+{{ form_ajax('renderForm::onSave', { 
+    class: 'formalities-form', 
+    onsubmit: "$('.formalities-form__error').removeClass('formalities-form__error--active');$('.formalities-form').addClass('formalities-form--loading')",
+    success: "$('.formalities-form').empty();$('.formalities-success-message').addClass('formalities-success-message--active')", 
+    error: "try { const fields = jqXHR.responseJSON.X_OCTOBER_ERROR_FIELDS; for (let error in fields) { $('.formalities-form__error[data-name='+error+']').text( fields[error].join(' ') ).addClass('formalities-form__error--active') }} catch(e) { alert(e) };return false;" ,
+    complete: "$('.formalities-form').removeClass('formalities-form--loading')"
+} ) }}
+{{ form_hidden('model', model)}}
+{{ form_hidden('plugin', plugin)}}

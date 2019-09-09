@@ -1,0 +1,2 @@
+{% if showLabels %}{% partial '@label' %}{% endif %}
+<textarea name="{{ model }}[{{ field.name }}]" placeholder="{{ field.placeholder }}"{% if field.required and validate %} required{% endif %} class="formalities-form__input">{{ field.default }}</textarea>

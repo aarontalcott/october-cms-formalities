@@ -1,0 +1,6 @@
+{% partial '@label' %}
+<div class="formalities-form__input-group">
+{% for key, value in field.options %}
+<label><input type="checkbox" name="{{ model }}[{{ field.name }}][]" value="{{ key }}" class="formalities-form__checkbox{% if loop.first %} formalities-form__checkbox--first{% endif %}"{% if field.default is defined and key == default %} checked{% endif %}> {{ value }}</label>
+{% endfor %}
+</div>

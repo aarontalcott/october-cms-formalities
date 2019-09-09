@@ -1,0 +1,41 @@
+.js-tabs {
+  max-width: 100%;
+}
+.js-tabs__header {
+  display: block;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.js-tabs__header li {
+    list-style-type: none;
+  float: left;
+}
+.js-tabs__title, .js-tabs__title:active, .js-tabs__title:visited {
+  background: #fff;
+  border: 1px solid #999;
+  cursor: pointer;
+  display: block;
+  margin-right: 0.5em;
+  padding: .25em 1.5em;
+  transition: all 0.25s;
+  opacity: .7;
+  border-top-left-radius: 0.75em;
+  border-top-right-radius: 0.75em;
+  color: inherit;
+}
+.js-tabs__title:hover, .js-tabs__title:active, .js-tabs__title:focus {
+  text-decoration: none;
+}
+.js-tabs__title-active, .js-tabs__title-active:visited {
+  background: #fff;
+  border-bottom-color: #fff;
+  opacity: 1;
+}
+.js-tabs__content {
+  border: 1px solid #999;
+  border-radius: 0 3px 3px 3px;
+  margin-top: -1px;
+  padding: 1em 2em 3em;
+
+}

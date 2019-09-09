@@ -1,0 +1,2 @@
+{% if showLabels %}{% partial '@label' %}{% endif %}
+<input type="number" name="{{ model }}[{{ field.name }}]" placeholder="{{ field.placeholder }}"{% if field.required and validate %} required{% endif %} class="formalities-form__input" value="{{ field.default }}">

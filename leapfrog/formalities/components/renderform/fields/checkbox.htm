@@ -1,0 +1,1 @@
+<label><input type="checkbox" name="{{ model }}[{{ field.name }}]" value="1"{% if field.required and validate %} required{% endif %}{% if field.default %} checked{% endif %} class="formalities-form__checkbox formalities-form__checkbox--first"> {{ field.label }}{% if field.required %}*{% endif %}</label>
